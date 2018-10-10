@@ -4,7 +4,7 @@ import { CreateCompanyComponent } from '../app/create-company/create-company.com
 
 const routes: Routes = [
     { path: '', redirectTo: 'company', pathMatch: 'full' },
-    { path: 'Companies', component: CreateCompanyComponent },
+    { path: 'addCompany', component: CreateCompanyComponent },
 ];
 
 @NgModule({

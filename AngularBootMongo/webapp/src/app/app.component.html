@@ -1,8 +1,20 @@
-<div style="padding: 20px;">
-    <nav>
-        <a routerLink="Companies" class="btn btn-primary active" role="button" routerLinkActive="active">Companies</a>
-        <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Add</a>
-        <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
-    </nav>
-    <router-outlet></router-outlet>
+<!-- Just an image -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        Product Catalog
+    </a>
+</nav>
+
+<div class="container-fluid mt-4 mb-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <a routerLink="addCompany" class="btn btn-primary active" role="button" routerLinkActive="active">Add Company</a>
+                    <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">Search</a>
+                    <router-outlet></router-outlet>
+                </div>
+              </div>
+        </div>
+    </div>
 </div>
