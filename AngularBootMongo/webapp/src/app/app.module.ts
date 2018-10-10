@@ -9,6 +9,7 @@ import { CreateCompanyComponent } from './create-company/create-company.componen
 import { CompanyDetailsComponent } from './company-details/company-details.component';
 import { CompaniesListComponent } from './companies-list/companies-list.component';
 import { SearchCompanyComponent } from './search-company/search-company.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SearchCompanyComponent } from './search-company/search-company.componen
     CreateCompanyComponent,
     CompanyDetailsComponent,
     CompaniesListComponent,
-    SearchCompanyComponent
+    SearchCompanyComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,
