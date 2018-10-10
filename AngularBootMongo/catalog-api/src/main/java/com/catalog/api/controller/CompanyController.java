@@ -28,9 +28,19 @@ public class CompanyController {
 		this.companyService = companyService;
 	}
 	
-	@GetMapping("/companies")
+	@GetMapping("/company/all")
 	public List<Company> getAllCompanies() {
 		return companyService.getAllCompanies();
+	}
+	
+	@GetMapping("/company/{id}")
+	public ResponseEntity<Company> getCompanyById(@PathVariable("id") String id) {
+		Company _company = companyService.getCompanyById(id);
+		if(_company != null) {
+			return new ResponseEntity<>(_company, HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 	
 	@PostMapping("/company/create")

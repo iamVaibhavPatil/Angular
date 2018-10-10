@@ -1,0 +1,44 @@
+<h3>Create Company</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="companyName">Company Name</label>
+      <input type="text" class="form-control" id="companyName" required [(ngModel)]="company.companyName" name="companyName">
+    </div>
+    <div class="form-group">
+      <label for="companyCode">Company Code</label>
+      <input type="text" class="form-control" id="companyCode" required [(ngModel)]="company.companyCode" name="companyCode">
+    </div>
+    <div class="form-group">
+      <label for="expiryReturnsAllowed">Expiry Returns Allowed</label>
+      <select class="form-control" required [(ngModel)]="company.expiryReturnsAllowed" id="expiryReturnsAllowed" name="expiryReturnsAllowed">
+        <option value="">Please Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="verified">Verified</label>
+      <select class="form-control" required [(ngModel)]="company.verified" id="verified" name="verified">
+        <option value="">Please Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="age">Status</label>
+      <select class="form-control" required [(ngModel)]="company.status" id="status" name="age">
+        <option value="">Please Select</option>
+        <option value="Y">Yes</option>
+        <option value="N">No</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+  </form>
+</div>
+ 
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <button class="btn btn-success" (click)="createNewCompany()">Add Company</button>
+</div>

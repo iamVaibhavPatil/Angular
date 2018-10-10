@@ -28,6 +28,15 @@ public class CompanyService {
 		return companies;
 	}
  
+	public Company getCompanyById(String id) {
+		Optional<Company> company = companyRepository.findById(id);
+		if(company.isPresent()) {
+			return company.get();
+		} else {
+			return null;
+		}
+	}	
+	
 	public Company postCompany(Company company) {
 		Company _customer = companyRepository.save(company);
 		return _customer;
@@ -55,4 +64,5 @@ public class CompanyService {
 			return null;
 		}
 	}
+
 }
