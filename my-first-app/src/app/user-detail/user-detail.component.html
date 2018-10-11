@@ -1,0 +1,7 @@
+<label>Username Data Binding Assignment</label>
+<input type="text" class="form-control"
+       [(ngModel)]="username" />
+<button class="btn btn-primary"
+        [disabled]='checkIfUsernameNonEmpty()'
+        (click)="resetUsername()">Reset</button>
+<p>{{ username }}</p>
