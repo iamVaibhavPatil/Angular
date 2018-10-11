@@ -2,6 +2,6 @@
 <input type="text" class="form-control"
        [(ngModel)]="username" />
 <button class="btn btn-primary"
-        [disabled]='checkIfUsernameNonEmpty()'
+        [disabled]='username === "" ? true : false'
         (click)="resetUsername()">Reset</button>
 <p>{{ username }}</p>

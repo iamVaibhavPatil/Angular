@@ -13,10 +13,6 @@ export class UserDetailComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkIfUsernameNonEmpty() {
-    return this.username === '' ? true : false;
-  }
-
   resetUsername() {
     this.username = '';
   }
