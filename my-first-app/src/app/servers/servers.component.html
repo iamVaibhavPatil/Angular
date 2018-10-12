@@ -9,8 +9,8 @@
         [disabled]="!allowAddNewServer"
         (click)="onCreateServer()">Add Server</button>
 
-<p>Interpolation -- {{ allowAddNewServer }}</p>
-<p [innerText]="allowAddNewServer"></p>
-<p>{{ serverCreationStatus }}</p>
+<!--<p>Interpolation -- {{ allowAddNewServer }}</p>
+<p [innerText]="allowAddNewServer"></p>-->
+<p *ngIf="isServerCreated">{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
