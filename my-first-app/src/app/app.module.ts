@@ -9,6 +9,7 @@ import { ServersComponent } from './servers/servers.component';
 import { WarningAlertComponent } from './warning-alert/warning-alert.component';
 import { SuccessAlertComponent } from './success-alert/success-alert.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DirectivesExampleComponent } from './directives-example/directives-example.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     ServersComponent,
     WarningAlertComponent,
     SuccessAlertComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    DirectivesExampleComponent
   ],
   imports: [
     BrowserModule,
