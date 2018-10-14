@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-game-control (numberIncremented)="onNumberIncrement($event)"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <app-odd-number *ngFor="let oddnum of oddNumbers" [oddNumber]="oddnum"></app-odd-number>
+    </div>
+    <div class="col-md-6">
+      <app-even-number *ngFor="let evennum of evenNumbers" [evenNumber]="evennum"></app-even-number>
+    </div>
+  </div>
+</div>
