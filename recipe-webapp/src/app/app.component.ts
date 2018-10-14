@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  selectedNavigation = 'recipes';
+
+  onNavigate(feature: string) {
+    this.selectedNavigation = feature;
+  }
 }
