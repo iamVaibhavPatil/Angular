@@ -24,6 +24,33 @@
             {{ even }}
           </li>
         </div>
+
+        <!-- Custom ngIf using ng-template instead of using * in structural directive -->
+        <ng-template [ngIf]="!onlyOdd">
+          <div>
+            <li
+              class="list-group-item"
+              [ngClass]="{'odd': even % 2 !== 0}"
+              [ngStyle]="{'backgroundColor': even % 2 !== 0 ? 'yellow' : 'tranparent'}"
+              *ngFor="let even of evenNumbers">
+              {{ even }}
+            </li>            
+          </div>
+        </ng-template>
+        <!-- Custom ngIf using ng-template -->
+
+        <!-- Custom Strctural Directive -->
+        <div *appUnless="onlyOdd">
+          <li
+            class="list-group-item"
+            [ngClass]="{'odd': even % 2 !== 0}"
+            [ngStyle]="{'backgroundColor': even % 2 !== 0 ? 'yellow' : 'tranparent'}"
+            *ngFor="let even of evenNumbers">
+            {{ even }}
+          </li>
+        </div>
+        <!-- Custom Strctural Directive -->
+
       </ul>
       <p appBasicHighlight>Style me as Basic Directive</p>
       <p appBetterHighlight [defaultColor]="'yellow'" [hoverColor]="'red'">Style me as better Directive</p>
