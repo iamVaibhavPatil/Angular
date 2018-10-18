@@ -1,19 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ServersService } from '../servers.service';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-server',
   templateUrl: './server.component.html',
   styleUrls: ['./server.component.css']
 })
-export class ServerComponent implements OnInit {
-  server: {id: number, name: string, status: string};
+export class ServerComponent implements OnInit, OnDestroy {
 
-  constructor(private serversService: ServersService) { }
+  server: {id: number, name: string, status: string};
+  paramSubscription: Subscription;
+
+  constructor(private serversService: ServersService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.server = this.serversService.getServer(1);
+    this.server = this.serversService.getServer(+this.activatedRoute.snapshot.params['id']);
+
+    // Subscribe to route to listen for the param
+    this.paramSubscription = this.activatedRoute.params.subscribe((params: Params) => {
+      this.server = this.serversService.getServer(+params['id']);
+    });
+
+  }
+
+  ngOnDestroy(): void {
+    this.paramSubscription.unsubscribe();
   }
 
 }
