@@ -22,7 +22,7 @@ const appRoutes: Routes = [
         ]
     },
     { path: 'not-found', component: PageNotFoundComponent },
-    { path: '**', redirectTo: '/not-found' }
+    { path: '**', redirectTo: '/not-found' }  // This should always be last route in the list
 ];
 
 
