@@ -13,15 +13,17 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
-            'Chicken Burger',
-            'Chicken Burger is yummy',
-            'http://robertsboxedmeats.ca/wp-content/uploads/2015/01/120518_CrispyChickenBurger_hr.jpg',
-            [
-                new Ingredient('Chick Meat', 1),
-                new Ingredient('Tommatoes', 1),
-                new Ingredient('French Fries', 20)
-            ]),
+                1,
+                'Chicken Burger',
+                'Chicken Burger is yummy',
+                'http://robertsboxedmeats.ca/wp-content/uploads/2015/01/120518_CrispyChickenBurger_hr.jpg',
+                [
+                    new Ingredient('Chick Meat', 1),
+                    new Ingredient('Tommatoes', 1),
+                    new Ingredient('French Fries', 20)
+                ]),
             new Recipe(
+                2,
                 'Italian Pizza',
                 'Italian Pizza is tasty',
                 'https://cdn.yemek.com/mncrop/940/625/uploads/2016/08/makarna-tabanli-pizza.jpg',
@@ -34,6 +36,13 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipe(id: number) {
+        const recipe = this.recipes.find((r) => {
+            return r.id === id;
+        });
+        return recipe;
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
