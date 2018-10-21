@@ -20,6 +20,7 @@ export class ServerComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
+    // Using Resolver to load data asychornously
     this.paramSubscription = this.activatedRoute.data.subscribe((data: Data) => {
       this.server = data['server'];
     });
