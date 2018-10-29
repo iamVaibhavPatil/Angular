@@ -50,22 +50,32 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-12">
-          <div class="row">
+        <div class="col-md-12" formArrayName="ingredients">
+          <div
+            *ngFor="let ingredientControl of recipeForm.get('ingredients').controls; let i = index"
+            class="row mb-2"
+            [formGroupName]="i">
             <div class="col-md-8">
               <input
                 type="text"
+                formControlName="name"
                 class="form-control">
             </div>
             <div class="col-md-2">
               <input
                 type="number"
+                formControlName="amount"
                 class="form-control">              
             </div>
             <div class="col-md-2">
               <button class="btn btn-danger">X</button>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <button class="btn btn-success" (click)="onAddIngredient()" type="button">Add Ingredient</button>
         </div>
       </div>
     </form>
