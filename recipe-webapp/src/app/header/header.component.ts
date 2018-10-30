@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { DataStorageService } from '../shared/data-storage.service';
 import { Response } from '@angular/http';
 import { RecipeService } from '../recipes/recipe.service';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,8 @@ import { RecipeService } from '../recipes/recipe.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private dataStorageService: DataStorageService) { }
+  constructor(private dataStorageService: DataStorageService,
+              private authService: AuthService) { }
 
   onSaveData() {
     this.dataStorageService.storeRecipes().subscribe((response: Response) => {
@@ -19,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
   onFetchData() {
     this.dataStorageService.getRecipes();
+  }
+
+  onLogOut() {
+    this.authService.logout();
   }
 
   ngOnInit() {
