@@ -13,7 +13,7 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-            <ng-template [ngIf]="!authService.isAuthenticated()">
+            <ng-template [ngIf]="!isAuthenticated()">
                 <li class="nav-item" routerLinkActive="active">
                     <a class="nav-link" [routerLink]="[ '/signup']">Register</a>
                 </li>
@@ -22,7 +22,7 @@
                 </li>
             </ng-template>
 
-            <ng-template [ngIf]="authService.isAuthenticated()">
+            <ng-template [ngIf]="isAuthenticated()">
                 <li class="nav-item">
                     <a class="nav-link" style="cursor: pointer;" (click)="onLogOut()">Log Out</a>
                 </li>
