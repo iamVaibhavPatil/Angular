@@ -25,8 +25,7 @@ export class DataStorageService {
 
         // With Custom HttpRequest With ProgressReport
         const req = new HttpRequest('PUT', 'https://ng-recipe-boot-44ca4.firebaseio.com/recipes.json', this.recipeService.getRecipes(), {
-            reportProgress: true,
-            params: new HttpParams().set('auth', token)
+            reportProgress: true
         });
         return this.httpClient.request(req);
     }
