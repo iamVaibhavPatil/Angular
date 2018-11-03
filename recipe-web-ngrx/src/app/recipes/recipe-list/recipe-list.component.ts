@@ -1,12 +1,9 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Subscription, Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 
-import { Recipe } from '../recipe.model';
-import { RecipeService } from '../recipe.service';
-import * as fromRecipe from '../store/recipes.reducers';
-import * as RecipeActions from '../store/recipes.actions';
+import * as fromRecipe from '../store/recipe.reducers';
 
 @Component({
   selector: 'app-recipe-list',
@@ -28,5 +25,4 @@ export class RecipeListComponent implements OnInit {
   onNewRecipe() {
     this.router.navigate(['new'], {relativeTo: this.route});
   }
-
 }
